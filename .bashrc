@@ -9,4 +9,4 @@ gitty() {
 
 
 PROMPT_DIRTRIM=2
-PS1="\h \w \[\e[1;32m\]\$(gitty)\[\e[0m\] \[\e[1;33m\]▶\[\e[0m\] "
+PS1="\h \w \[\e[1;32m\]\$(gitty)\[\e[0m\]\n\[\e[1;33m\]▶\[\e[0m\] "
