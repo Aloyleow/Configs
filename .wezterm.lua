@@ -17,6 +17,7 @@ config.color_scheme = 'Ashes (base16)'
 config.window_background_opacity = 0.75
 
 -- Set tab length
+config.hide_tab_bar_if_only_one_tab = true
 
 -- Finally, return the configuration to wezterm:
 config.front_end = "WebGpu"
