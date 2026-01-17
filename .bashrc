@@ -5,19 +5,24 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias grep='grep --color=auto'
+
+export LS_COLORS="${LS_COLORS}:di=35:fi=37"
+alias ls='ls --color=always'
+
+#https://terceiro.xyz/2012/01/28/a-visual-cheat-sheet-for-ansi-color-codes/  (Colorguide)
 declare -A rainbow
-rainbow[lblue]="\e[1;36m"
+rainbow[lblue]="\e[0;36m"
+rainbow[blue]="\e[1;36m"
+rainbow[lgreen]="\e[0;32m"
 rainbow[green]="\e[1;32m"
 rainbow[reset]="\e[0m"
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 directea() {
   if [[ "$PWD" == "$HOME" ]]; then
-	  printf "%b" "${rainbow[lblue]}󱢴${rainbow[reset]}"
+	  printf "%b" "${rainbow[blue]}󱢴${rainbow[reset]}"
   else
-	  printf "%b" "${rainbow[lblue]}${PWD/#$HOME/󱢴 }${rainbow[reset]}"
+	  printf "%b" "${rainbow[blue]}󱢴 ${rainbow[lblue]}${PWD/#$HOME/}${rainbow[reset]}"
   fi
 }
 
@@ -30,9 +35,8 @@ gitty() {
   printf "%b" "${rainbow[green]}${branch}${rainbow[reset]}"
 }
 
-arrow() {
-  local green="\e[0;32m"	
-  printf "%b" "${green}${rainbow[reset]}"
+arrow() {	
+  printf "%b" "${rainbow[lgreen]}${rainbow[reset]}"
 }
 
 PROMPT_DIRTRIM=2
