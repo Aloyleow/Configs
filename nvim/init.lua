@@ -1,10 +1,14 @@
---require("config.lazy")
+require("config.lazy")
 
-vim.cmd [[
-  highlight Normal guibg=NONE ctermbg=NONE
-  highlight NonText guibg=NONE ctermbg=NONE
-  highlight EndOfBuffer guibg=NONE ctermbg=NONE
-]]
+vim.cmd("colorscheme rose-pine-moon")
+vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        if vim.fn.argc() == 0 then
+          require("nvim-tree.api").tree.open()
+        end
+      end
+})
 
-vim.opt.number = true
+
+
 
