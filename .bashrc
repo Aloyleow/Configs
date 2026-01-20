@@ -8,7 +8,14 @@
 alias grep='grep --color=auto'
 
 export LS_COLORS="di=35:fi=37"
+
 alias ls='ls --color=auto'
+alias cd2='cd ../../'
+alias cd3='cd ../../../'
+alias cd4='cd ../../../../'
+
+alias upos='sudo pacman -Syu'
+alias upyay='yay -Syu'
 
 #https://terceiro.xyz/2012/01/28/a-visual-cheat-sheet-for-ansi-color-codes/  (Colorguide)
 declare -A rainbow
@@ -41,4 +48,4 @@ arrow() {
 }
 
 PROMPT_DIRTRIM=2
-PS1="\h \[\$(directea)\] \[\$(gitty)\]\n\[\$(arrow) \]"
+PS1="\h \[\$(directea)\] \[\$(gitty)\]\n\[\$(arrow)\] "
