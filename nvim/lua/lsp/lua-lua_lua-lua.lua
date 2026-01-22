@@ -1,0 +1,16 @@
+vim.lsp.config.lua_ls = {
+  cmd = { "lua-language-server" },
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+vim.lsp.enable("lua_ls")
+

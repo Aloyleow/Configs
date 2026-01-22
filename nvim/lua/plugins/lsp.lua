@@ -14,8 +14,12 @@ return {
         },
       },
     }
-    -- 2. Enable the server (NEW API)
-    vim.lsp.enable("lua_ls")
-    vim.diagnostic.config({ virtual_text = true })
+    require("lsp.lua-lua_lua-lua")
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      severity_sort = true,
+    })
   end,
 }
