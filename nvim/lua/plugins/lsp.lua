@@ -3,7 +3,11 @@ return {
     config = function()
    require("lsp.rust")
    require("lsp.lua-lua_lua-lua")
-    vim.diagnostic.config({
+   require("lsp.ts")
+   require("lsp.html")
+   require("lsp.css")
+   require("lsp.json")
+   vim.diagnostic.config({
       virtual_text = true,
       signs = true,
       underline = true,
